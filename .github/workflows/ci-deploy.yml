@@ -2,9 +2,9 @@ name: CI & Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ['master']
   pull_request:
-    branches: [ "master" ]
+    branches: ['master']
   workflow_dispatch:
 
 permissions:
@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   # group: ci-${{ github.ref }}
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
@@ -61,12 +61,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('pnpm-lock.yaml') }}-
 
-
         #- name: Resolve BASE path
         #id: base
         #run: echo "path=/${GITHUB_REPOSITORY#*/}" >> "$GITHUB_OUTPUT"
 
-      - name: Build
+      - name:
+          Build
           #env:
           #API_URL: ${{ vars.API_URL }}
         #API_KEY: ${{ secrets.API_KEY }}
@@ -76,7 +76,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: "./out"
+          path: './out'
 
   deploy:
     environment:
