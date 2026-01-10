@@ -20,8 +20,8 @@ concurrency:
 jobs:
   build:
     #environment:
-      #name: github-pages
-      #url: ${{ steps.deployment.outputs.page_url }}
+    #name: github-pages
+    #url: ${{ steps.deployment.outputs.page_url }}
 
     runs-on: ubuntu-latest
 
@@ -67,10 +67,10 @@ jobs:
         #run: echo "path=/${GITHUB_REPOSITORY#*/}" >> "$GITHUB_OUTPUT"
 
       - name: Build
-        env:
+          #env:
           #API_URL: ${{ vars.API_URL }}
           #API_KEY: ${{ secrets.API_KEY }}
-          #BASE_PATH: ${{ steps.base.outputs.path }}
+        #BASE_PATH: ${{ steps.base.outputs.path }}
         run: pnpm build
 
       - name: Upload artifact
