@@ -45,9 +45,6 @@ jobs:
       - name: ESLint
         run: pnpm lint
 
-      - name: Type check
-        run: pnpm exec tsc --noEmit
-
       - name: Setup Pages
         uses: actions/configure-pages@v6
         with:
@@ -65,13 +62,15 @@ jobs:
         #id: base
         #run: echo "path=/${GITHUB_REPOSITORY#*/}" >> "$GITHUB_OUTPUT"
 
-      - name:
-          Build
-          #env:
-          #API_URL: ${{ vars.API_URL }}
+      - name: Build
+        #env:
+        #API_URL: ${{ vars.API_URL }}
         #API_KEY: ${{ secrets.API_KEY }}
         #BASE_PATH: ${{ steps.base.outputs.path }}
         run: pnpm build
+
+      - name: Type check
+        run: pnpm exec tsc --noEmit
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
