@@ -10,7 +10,8 @@
     "lint:fix": "eslint --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "clean": "bash -c 'read -p $'\\''\\033[33m⚠ Clean project?\\033[0m [\\033[31my\\033[0m/\\033[36mN\\033[0m] '\\'' x; [ \"$x\" = \"y\" ] && rm -rf node_modules pnpm-lock.yaml .next tsconfig.tsbuildinfo && echo $'\\''\\033[32m✓ Cleaned\\033[0m'\\'''"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.13.11",
