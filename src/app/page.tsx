@@ -6,7 +6,7 @@ export default function Home() {
       <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-between bg-white px-16 py-32 sm:items-start dark:bg-black">
         <Image
           className="h-5 w-[100px] dark:invert"
-          src="/next.svg"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/next.svg`}
           alt="Next.js logo"
           width={100}
           height={20}

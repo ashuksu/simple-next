@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "preview": "pnpm dlx serve out",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "prettier": "prettier --write .",
