@@ -36,7 +36,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Prettier check
-        run: pnpm format:check
+        run: pnpm prettier:check
 
       - name: ESLint
         run: pnpm lint
