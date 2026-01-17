@@ -13,7 +13,7 @@
     "prettier:check": "prettier --check .",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "clean": "bash -c 'read -p $'\\''\\033[33m⚠ Clean project?\\033[0m [\\033[31my\\033[0m/\\033[36mN\\033[0m] '\\'' x; [ \"$x\" = \"y\" ] && rm -rf node_modules pnpm-lock.yaml .next tsconfig.tsbuildinfo && echo $'\\''\\033[32m✓ Cleaned\\033[0m'\\'''",
+    "clean": "bash -c 'read -p $'\\''\\033[33m⚠ Clean project?\\033[0m [\\033[31my\\033[0m/\\033[36mN\\033[0m] '\\'' x; [ \"$x\" = \"y\" ] && rm -rf node_modules pnpm-lock.yaml .next tsconfig.tsbuildinfo out next-env.d.ts && echo $'\\''\\033[32m✓ Cleaned\\033[0m'\\'''",
     "prepare": "husky"
   },
   "dependencies": {
