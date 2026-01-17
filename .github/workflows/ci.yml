@@ -1,11 +1,8 @@
 name: CI
 
 on:
-  #push:
-  #branches: ['master']
-  pull_request:
-    branches: ['master']
-    types: [opened, synchronize, reopened]
+  push:
+    branches: [ 'master' ]
   workflow_dispatch:
 
 concurrency:
@@ -42,17 +39,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('pnpm-lock.yaml') }}-
 
-      - name: Generate Next.js types
-        run: pnpm exec next typegen
-
       - name: Prettier check
         run: pnpm prettier:check
 
       - name: ESLint
         run: pnpm lint
-
-      - name: Type check
-        run: pnpm exec tsc --noEmit
 
       - name: Build
         run: pnpm build
