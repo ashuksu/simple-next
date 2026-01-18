@@ -1,18 +1,21 @@
 'use client';
 
-import Link from 'next/link';
-import { useParams, useSearchParams } from 'next/navigation';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 
 export default function InnerPage() {
   const params = useParams();
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   return (
     <main className="flex flex-col items-center gap-3 p-10">
       <h1>Inner Page - slug</h1>
-      <Link className={'border'} href={' /about/xxx?title=123&name=Bob'}>
-        Go to Query Prams
-      </Link>
+      <button className={'border'} onClick={() => router?.push('/about/xxx?title=123&name=Bob')}>
+        <b className={'font-black'}>Push()</b> to Query Prams
+      </button>
+      <button className={'border'} onClick={() => router.replace('/')}>
+        <b className={'font-black'}>Peplace()</b> to /
+      </button>
 
       {params && <p>Params.slug: {params.slug}</p>}
       <p>title: {searchParams?.get('title')}</p>
