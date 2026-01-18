@@ -19,7 +19,8 @@ export default function InnerPage() {
 
       {params && <p>Params.slug: {params.slug}</p>}
       <p>title: {searchParams?.get('title')}</p>
-      <p>name: {searchParams?.has('name') && 'has "name"'}</p>
+      <p>name: {searchParams?.get('name')}</p>
+      {searchParams?.has('name') && <p>has &#34;name&#34;</p>}
     </main>
   );
 }
