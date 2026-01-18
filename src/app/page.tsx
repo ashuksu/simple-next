@@ -2,8 +2,9 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-between px-16 py-32 sm:items-start">
-      <div className="grid grid-cols-2 items-center justify-center justify-items-center bg-white">
+    <main className="flex w-full max-w-3xl flex-1 flex-col items-center px-16 py-10 sm:items-start">
+      <h1 className={'mb-10 text-4xl'}>Home</h1>
+      <section className="grid grid-cols-2 items-center justify-center justify-items-center bg-white">
         <Image
           className="h-auto w-auto max-w-full p-2"
           src={'/next.svg'}
@@ -30,7 +31,7 @@ export default function Home() {
           height={200}
           priority
         />
-      </div>
+      </section>
     </main>
   );
 }

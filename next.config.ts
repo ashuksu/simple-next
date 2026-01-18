@@ -3,6 +3,7 @@ import './src/env';
 
 const nextConfig: NextConfig = {
   /* config options here */
+  reactStrictMode: false,
   reactCompiler: true,
   images: {
     remotePatterns: [

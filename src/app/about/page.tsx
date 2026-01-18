@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 export default function About() {
   return (
-    <main className="flex w-full max-w-3xl flex-1 flex-col items-center justify-between px-16 py-32 sm:items-start">
-      <h1>About</h1>
+    <section className={'w-full'}>
+      <h2 className={'mb-10 text-3xl'}>Section Title: About page</h2>
       <Link href={''} />
-    </main>
+    </section>
   );
 }

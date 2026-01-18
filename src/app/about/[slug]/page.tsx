@@ -8,19 +8,34 @@ export default function InnerPage() {
   const router = useRouter();
 
   return (
-    <main className="flex flex-col items-center gap-3 p-10">
-      <h1>Inner Page - slug</h1>
-      <button className={'border'} onClick={() => router?.push('/about/xxx?title=123&name=Bob')}>
-        <b className={'font-black'}>Push()</b> to Query Prams
-      </button>
-      <button className={'border'} onClick={() => router.replace('/')}>
-        <b className={'font-black'}>Peplace()</b> to /
-      </button>
+    <div className="w-full">
+      <h2 className={'mb-10 text-2xl'}>Inner Page - slug</h2>
 
-      {params && <p>Params.slug: {params.slug}</p>}
-      <p>title: {searchParams?.get('title')}</p>
-      <p>name: {searchParams?.get('name')}</p>
-      {searchParams?.has('name') && <p>has &#34;name&#34;</p>}
-    </main>
+      <div className="flex max-w-xs flex-col gap-3">
+        <div className="grid grid-cols-2 gap-3">
+          <button
+            className={'border px-2 py-1'}
+            onClick={() => router?.push('/about/xxx?title=Push&name=Srav')}
+          >
+            Go to Query Prams
+          </button>
+
+          <button
+            className={'border px-2 py-1'}
+            onClick={() => router.replace('/about/xxx?title=Peplace&name=Ni')}
+          >
+            Go to Query Prams
+          </button>
+        </div>
+
+        {params && <p>Params.slug: {params.slug}</p>}
+
+        <p>title: {searchParams?.get('title')}</p>
+
+        <p>name: {searchParams?.get('name')}</p>
+
+        {searchParams?.has('name') && <p>has &#34;name&#34;</p>}
+      </div>
+    </div>
   );
 }
