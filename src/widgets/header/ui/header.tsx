@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/entities/elements/ui/button';
+import { Test } from '@/entities/components/ui/test';
+import { TestServer } from '@/entities/components/ui/test-server';
 
 export const Header = () => {
   return (
@@ -29,7 +30,9 @@ export const Header = () => {
           Inner
         </Link>
       </nav>
-      <Button />
+      <Test>
+        <TestServer />
+      </Test>
     </header>
   );
 };

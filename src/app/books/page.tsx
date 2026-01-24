@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-type Todo = {
+export type Todo = {
   userId: number;
   id: number;
   title: string;
