@@ -23,10 +23,13 @@ export default async function Id(props: Props) {
       <h1 className={'mb-10 text-4xl'}>ID</h1>
       <section className="grid w-full grid-cols-1 gap-3">
         <div>List ID: {params.slug}</div>
-        {searchParams.name && <div>Search Params [name]: {searchParams.name}</div>}
-        {searchParams.description && (
-          <div>Search Params [description]: {searchParams.description}</div>
-        )}
+
+        {Object.entries(searchParams).map(([key, value]) => (
+          <div key={key}>
+            Search Params [{key}]: {value}
+          </div>
+        ))}
+
         <div>Title: {todo.title}</div>
       </section>
     </main>
