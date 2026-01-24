@@ -1,8 +1,15 @@
+import type { Metadata } from 'next';
+
 type Todo = {
   userId: number;
   id: number;
   title: string;
   completed: boolean;
+};
+
+export const metadata: Metadata = {
+  title: 'Books Page',
+  description: 'Books page description',
 };
 
 export default async function Books() {
