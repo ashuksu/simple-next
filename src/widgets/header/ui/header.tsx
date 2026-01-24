@@ -24,7 +24,7 @@ export const Header = () => {
     <header className="flex w-full items-center justify-between bg-zinc-50 px-16 py-4 font-sans dark:bg-black">
       <Link className="logo h-4 w-4" href={'/'}>
         <Image
-          className={'h-auto w-auto'}
+          className={'aspect-square h-auto w-auto object-contain'}
           src={'/vercel.svg'}
           alt={'logo'}
           width={16}
@@ -65,6 +65,9 @@ export const Header = () => {
       <nav className="flex gap-4 text-green-300">
         <Link href="/" className="hover:underline">
           Home
+        </Link>
+        <Link href="/books" className="hover:underline">
+          Books
         </Link>
         <Link href="/about" className="hover:underline">
           About
