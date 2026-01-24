@@ -1,4 +1,4 @@
-import { Todo } from '@/app/books/page';
+import type { Todo } from '@/entities/todo/model/todo';
 
 export async function TestServer() {
   const todo: Todo = await fetch('https://jsonplaceholder.typicode.com/todos/1').then((res) =>
