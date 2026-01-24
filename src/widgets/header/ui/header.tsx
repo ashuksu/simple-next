@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Test } from '@/entities/components/ui/test';
-import { TestServer } from '@/entities/components/ui/test-server';
+import { Test } from '@/entities/components/test/ui/test';
+import { TestServer } from '@/entities/components/test-server/ui/test-server';
 
 export const Header = () => {
   return (

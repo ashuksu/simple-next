@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Books() {
-  const todo: Todo = await fetch('https://jsonplaceholder.typicode.com/todos/1').then((res) =>
+  const todos: Todo[] = await fetch('https://jsonplaceholder.typicode.com/todos').then((res) =>
     res.json(),
   );
 
@@ -22,7 +22,7 @@ export default async function Books() {
       <h1 className={'mb-10 text-4xl'}>Books</h1>
       <section className="grid w-full grid-cols-1 gap-3">
         <div>List</div>
-        <div>{todo.title}</div>
+        {/*<div>{todo.title}</div>*/}
       </section>
     </main>
   );
