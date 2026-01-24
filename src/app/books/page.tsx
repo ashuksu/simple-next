@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Todolists } from '@/entities/todolists/ui/todolists';
 import type { Todo } from '@/entities/todolists/model/todo';
-import { Suspense } from 'react';
+// import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Books Page',
@@ -22,9 +22,9 @@ export default async function Books() {
 
       <section className="flex w-full flex-col gap-4">
         <h3 className="border-b-2 border-b-amber-50 py-2 text-xl font-bold">Todoist</h3>
-        <Suspense fallback={<div>Loading todolists...</div>}>
-          <Todolists todolists={todolists} />
-        </Suspense>
+        {/*<Suspense fallback={<div>Loading todolists...</div>}>*/}
+        <Todolists todolists={todolists} />
+        {/*</Suspense>*/}
       </section>
     </main>
   );
