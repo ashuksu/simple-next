@@ -10,7 +10,10 @@ export const metadata: Metadata = {
 };
 
 const getTodolists = async (): Promise<Todo[]> => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/todos', { cache: 'no-store' });
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos', {
+    cache: 'force-cache',
+    next: { revalidate: 15 }, // every 15 seconds
+  });
   return res.json();
 };
 
