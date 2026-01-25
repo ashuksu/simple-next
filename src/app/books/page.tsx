@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Todolists } from '@/entities/todolists/ui/todolists';
 import { Todo } from '@/entities/todolists/model/todo';
+import { env } from '@/env';
 
 export const metadata: Metadata = {
   title: 'Books Page',
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
 };
 
 export const revalidate = 15; // 15sec for all page
+export const dynamic = 'force-dynamic';
 
 const getTodolists = async (): Promise<Todo[]> => {
   const res = await fetch('https://jsonplaceholder.typicode.com/todos');
