@@ -17,7 +17,7 @@ const getTodolists = async (): Promise<Todo[]> => {
 };
 
 export default async function Books() {
-  const { title } = await fetch('http://localhost:3000/api/title').then((res) => res.json());
+  const { title } = await fetch(`${env.BASE_URL}/api/title`).then((res) => res.json());
   const todolists: Promise<Todo[]> = getTodolists();
 
   return (
