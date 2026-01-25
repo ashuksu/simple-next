@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import { Todolists } from '@/entities/todolists/ui/todolists';
-import path from 'node:path';
-import fs from 'fs/promises';
 import { Todo } from '@/entities/todolists/model/todo';
 
 export const metadata: Metadata = {
@@ -17,20 +15,7 @@ const getTodolists = async (): Promise<Todo[]> => {
 };
 
 export default async function Books() {
-  const getParsedData = async () => {
-    const filePath = path.join(process.cwd(), 'public', 'data.json');
-
-    try {
-      const data = await fs.readFile(filePath);
-      return JSON.parse(data.toString());
-    } catch {
-      return { title: 'no title' };
-    }
-  };
-
-  const { title } = await getParsedData();
-  console.log(1, title);
-
+  const { title } = await fetch('http://localhost:3000/api/title').then((res) => res.json());
   const todolists: Promise<Todo[]> = getTodolists();
 
   return (
