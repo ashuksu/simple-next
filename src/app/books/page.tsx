@@ -1,14 +1,11 @@
 import type { Metadata } from 'next';
 import { Todolists } from '@/entities/todolists/ui/todolists';
 import type { Todo } from '@/entities/todolists/model/todo';
-// import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Books Page',
   description: 'Books page description',
 };
-
-export const dynamic = 'force-dynamic'; // force-dynamic, force-static, error, auto
 
 const getTodolists = async (): Promise<Todo[]> => {
   const res = await fetch('https://jsonplaceholder.typicode.com/todos', { cache: 'force-cache' });
@@ -25,9 +22,7 @@ export default async function Books() {
 
       <section className="flex w-full flex-col gap-4">
         <h3 className="border-b-2 border-b-amber-50 py-2 text-xl font-bold">Todolist</h3>
-        {/*<Suspense fallback={<div>Loading todolists...</div>}>*/}
         <Todolists todolists={todolists} />
-        {/*</Suspense>*/}
       </section>
     </main>
   );
