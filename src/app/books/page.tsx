@@ -9,11 +9,10 @@ export const metadata: Metadata = {
   description: 'Books page description',
 };
 
+export const revalidate = 15; // 15sec for all page
+
 const getTodolists = async (): Promise<Todo[]> => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/todos', {
-    cache: 'force-cache',
-    next: { revalidate: 15 }, // every 15 seconds
-  });
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos');
   return res.json();
 };
 
