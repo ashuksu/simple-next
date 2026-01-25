@@ -8,8 +8,10 @@ export const metadata: Metadata = {
   description: 'Books page description',
 };
 
+export const dynamic = 'force-dynamic'; // force-dynamic, force-static, error, auto
+
 const getTodolists = async (): Promise<Todo[]> => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/todos', { cache: 'no-store' });
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos', { cache: 'force-cache' });
   return res.json();
 };
 

@@ -14,6 +14,9 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = (await params).id;
+
+  console.log(`param id: ${id}`);
+
   const todo: Todo = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`).then((res) =>
     res.json(),
   );
