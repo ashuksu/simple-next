@@ -3,17 +3,22 @@ name: CI
 on:
   push:
     branches: ['master']
-  pull_request:
-    branches: ['master']
+    #pull_request:
+    #branches: ['master']
+    #types: [opened, synchronize, reopened]
   workflow_dispatch:
 
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout
@@ -29,25 +34,25 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Prettier check
-        run: pnpm prettier:check
-
-      - name: ESLint
-        run: pnpm lint
-
-      - name: Generate Next.js types
-        run: pnpm exec next typegen
-
-      - name: Type check
-        run: pnpm exec tsc --noEmit
-
-      - name: Restore Next.js cache
+      - name: Restore Next.js build cache
         uses: actions/cache@v6
         with:
           path: .next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('pnpm-lock.yaml') }}-
+
+      - name: Generate Next.js types
+        run: pnpm exec next typegen
+
+      - name: Prettier check
+        run: pnpm prettier:check
+
+      - name: ESLint
+        run: pnpm lint
+
+      - name: Type check
+        run: pnpm exec tsc --noEmit
 
       - name: Build
         run: pnpm build
