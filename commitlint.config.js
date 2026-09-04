@@ -1,6 +1,7 @@
 /**
  * FORMAT: [branch - ]<type>[(scope)]: <subject>
  * TYPES: feat, fix, docs, style, refactor, test, chore
+ * ^(?:[\w.-]+ - )?(?:build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(?:\([\w.-]+\))?: .+$
  * EXAMPLES:
  *   fix: fix bug
  *   main - feat(auth): add login
