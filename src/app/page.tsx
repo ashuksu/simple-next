@@ -1,6 +1,4 @@
 import Image from 'next/image';
-import favico1 from '@/app/favicon.ico';
-import favico2 from './favicon.ico';
 
 export default function Home() {
   return (
@@ -13,33 +11,22 @@ export default function Home() {
             alt={'text'}
             width={200}
             height={200}
-            quality={10}
             priority
           />
-          <Image
-            src={'https://avatars.githubusercontent.com/u/15161763?v=4'}
-            alt={'text'}
-            width={200}
-            height={40}
-            quality={10}
-            priority
-          />
-          <Image
-            src={'https://avatars.githubusercontent.com/u/15161763?v=4'}
-            alt={'text'}
-            width={200}
-            height={40}
-            quality={10}
-            priority
-          />
-          <Image src={favico1} alt={''} width={50} height={50} />
-          <Image src={favico2} alt={''} width={50} height={50} />
           <Image
             src="https://images.unsplash.com/photo-1762970444229-63fa47ddad16?q=80&w=739&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt={''}
             width={200}
             height={200}
-            quality={10}
+            priority
+          />
+          <Image
+            src={
+              'https://plus.unsplash.com/premium_photo-1664013263421-91e3a8101259?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            }
+            alt={'text'}
+            width={200}
+            height={200}
             priority
           />
         </div>

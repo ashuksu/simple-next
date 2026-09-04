@@ -6,8 +6,14 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   images: {
     remotePatterns: [
-      new URL('https://avatars.githubusercontent.com/**'),
-      new URL('https://unsplash.com/**'),
+      {
+        protocol: 'https',
+        hostname: 'plus.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
   },
 };
