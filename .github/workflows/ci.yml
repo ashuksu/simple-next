@@ -12,6 +12,9 @@ concurrency:
 permissions:
   contents: read
 
+env:
+  BASE_URL: http://localhost:3000
+
 jobs:
   check:
     runs-on: ubuntu-latest
